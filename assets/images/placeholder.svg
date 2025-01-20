@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+  <rect width="800" height="600" fill="#2d2d2d" />
+  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="85" fill="#fcd8a1" font-weight="bold" text-anchor="middle" dominant-baseline="middle" letter-spacing="30">
+    IMAGE
+  </text>
+  <text x="50%" y="60%" font-family="Arial, sans-serif" font-size="40" fill="#fcd8a1" text-anchor="middle" dominant-baseline="middle" letter-spacing="10">
+    PLACEHOLDER
+  </text>
+</svg>

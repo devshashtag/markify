@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>markify</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- settings -->
+      <div class="settings-panel" id="settings-panel">
+        <!-- Image Settings Section -->
+        <section class="settings-group">
+          <h2 class="settings-group__title">Image Settings</h2>
+          <div class="settings-group__options">
+            <div class="settings-option">
+              <label for="padding-inline" class="settings-option__label">Padding Inline:</label>
+              <input type="number" id="padding-inline" name="padding_inline" min="0" step="1" value="10" class="settings-option__input" />
+            </div>
+            <div class="settings-option">
+              <label for="padding-block" class="settings-option__label">Padding Block:</label>
+              <input type="number" id="padding-block" name="padding_block" min="0" step="1" value="10" class="settings-option__input" />
+            </div>
+            <div class="settings-option">
+              <label for="padding-color" class="settings-option__label">Padding Color:</label>
+              <input type="color" id="padding-color" name="padding_color" value="#4e4e4e" class="settings-option__input" />
+            </div>
+            <div class="settings-option">
+              <label for="responsive-padding" class="settings-option__label">Responsive Padding:</label>
+              <input type="checkbox" id="responsive-padding" name="responsive_padding" checked class="settings-option__input" />
+            </div>
+          </div>
+        </section>
+        <!-- Watermark Settings Section -->
+        <section class="settings-group">
+          <h2 class="settings-group__title">Watermark Settings</h2>
+          <div class="settings-group__options">
+            <div class="settings-option">
+              <label for="watermark-position" class="settings-option__label">Position:</label>
+              <select id="watermark-position" name="position" class="settings-option__input">
+                <option value="top" selected>Top</option>
+                <option value="top-left">Top Left</option>
+                <option value="left">Left</option>
+                <option value="bottom-left">Bottom Left</option>
+                <option value="bottom">Bottom</option>
+                <option value="bottom-right">Bottom Right</option>
+                <option value="right">Right</option>
+                <option value="top-right">Top Right</option>
+                <option value="center">Center</option>
+              </select>
+            </div>
+            <div class="settings-option">
+              <label for="offset-x" class="settings-option__label">Offset X:</label>
+              <input type="number" id="offset-x" name="offset_x" step="1" value="0" class="settings-option__input" />
+            </div>
+            <div class="settings-option">
+              <label for="offset-y" class="settings-option__label">Offset Y:</label>
+              <input type="number" id="offset-y" name="offset_y" step="1" value="0" class="settings-option__input" />
+            </div>
+            <div class="settings-option">
+              <label for="watermark-scale" class="settings-option__label">Scale:</label>
+              <input type="number" id="watermark-scale" name="scale" min="1" step="1" value="20" class="settings-option__input" />
+            </div>
+            <div class="settings-option">
+              <label for="watermark-opacity" class="settings-option__label">Opacity:</label>
+              <input type="number" id="watermark-opacity" name="opacity" min="0" max="1" step="0.01" value="1" class="settings-option__input" />
+            </div>
+          </div>
+        </section>
+        <!-- Live Preview Section -->
+        <section class="settings-group">
+          <h2 class="settings-group__title">Live Preview</h2>
+          <div class="settings-preview">
+            <canvas class="preview-canvas" id="preview-canvas" width="920" height="720"></canvas>
+          </div>
+        </section>
+      </div>
+
+      <!-- input -->
+      <div class="container-input" id="container-input"></div>
+
+      <!-- output -->
+      <div class="container-output">
+        <canvas id="output-canvas"></canvas>
+      </div>
+    </div>
+
+    <script type="module" src="/assets/js/script.js"></script>
+  </body>
+</html>

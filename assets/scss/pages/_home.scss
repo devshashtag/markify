@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.app-container {
+  min-height: 100%;
+  max-width: $section-max-width;
+  margin: 0 auto;
+
+  color: $color-fg;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.container-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+
+  @include breakpoint(xl) {
+    flex-direction: row;
+  }
+}
+
+// .container-output {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: flex-start;
+//   gap: 1rem;
+//   padding: 1rem;
+//   width: 100%;
+
+//   background-color: $color-uploader-bg;
+//   border-radius: 1rem;
+//   width: 100%;
+//   text-transform: capitalize;
+
+//   display: none;
+//   #output-canvas {
+//     width: 100%;
+//   }
+// }

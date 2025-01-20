@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+html {
+  // font-size: 0.5rem; // 16 * 0.5 > 1rem = 8px
+  font-size: 0.625rem; // 16 * 0.625 > 1rem = 10px
+  scroll-behavior: smooth;
+  height: 100%;
+
+  // // 1rem = 11px
+  // @include breakpoint(xs) {
+  //   font-size: 0.6875rem;
+  // }
+
+  // 1rem = 12px
+  // @include breakpoint(sm) {
+  //   font-size: 0.75rem;
+  // }
+
+  // // 1rem = 13px
+  // @include breakpoint(md) {
+  //   font-size: 0.8125rem;
+  // }
+
+  // // 1rem = 14px
+  // @include breakpoint(lg) {
+  //   font-size: 0.875rem;
+  // }
+}
+
+body {
+  height: 100%;
+  font-size: 1.4rem;
+
+  background-color: $color-dark;
+  color: $color-fg;
+}
