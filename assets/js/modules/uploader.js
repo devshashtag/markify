@@ -3,7 +3,6 @@ class Uploader {
     this.name = name;
     this.previewCallback = previewCallback;
     this.multiple = multiple;
-    this.files = [];
   }
 
   createUploader(container = document.body) {
@@ -56,46 +55,28 @@ class Uploader {
     container.appendChild(uploadContainer);
   }
 
-  createCanvasPreview(file) {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+  createImagePreview(file) {
+    const img = document.createElement('img');
+    img.classList.add('file-preview');
+
+    img.dataset.name = file.name;
+    img.dataset.type = file.type;
 
     const reader = new FileReader();
-
     reader.onload = function (e) {
-      const img = new Image();
-      img.onload = function () {
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-      };
-
       img.src = e.target.result;
     };
-
     reader.readAsDataURL(file);
 
-    return canvas;
-  }
-
-  createListItem(file, index) {
-    const fileItem = document.createElement('div');
-    fileItem.classList.add('file-preview');
-
-    fileItem.dataset.index = index;
-    fileItem.addEventListener('click', () => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        this.previewCallback(e.target.result);
-      };
-      reader.readAsDataURL(file);
+    img.addEventListener('click', () => {
+      this.previewCallback(img.src);
     });
 
-    const canvasPreview = this.createCanvasPreview(file);
+    return img;
+  }
 
-    fileItem.appendChild(canvasPreview);
-
-    return fileItem;
+  getImages() {
+    return this.fileList.querySelectorAll('img');
   }
 
   setupEventListeners() {
@@ -121,19 +102,15 @@ class Uploader {
     // handle files
     const handleFiles = (files) => {
       for (const file of files) {
-        if (this.multiple) {
-          const index = this.files.push(file);
-          const listItem = this.createListItem(file, index - 1);
+        const listImg = this.createImagePreview(file);
 
-          this.fileList.appendChild(listItem);
-        } else {
-          this.files = [file];
+        if (!this.multiple) {
           this.fileList.innerHTML = '';
-          const listItem = this.createListItem(file, 0);
-
-          this.fileList.appendChild(listItem);
+          this.fileList.appendChild(listImg);
           break;
         }
+
+        this.fileList.appendChild(listImg);
       }
     };
 

@@ -75,17 +75,22 @@
             <canvas class="preview-canvas" id="preview-canvas" width="920" height="720"></canvas>
           </div>
         </section>
+
+        <!-- download section -->
+        <section class="settings-group">
+          <div class="settings-group__options">
+            <button class="download-button" id="download-button">Download all images</button>
+          </div>
+        </section>
       </div>
 
       <!-- input -->
       <div class="container-input" id="container-input"></div>
-
-      <!-- output -->
-      <div class="container-output">
-        <canvas id="output-canvas"></canvas>
-      </div>
     </div>
 
-    <script type="module" src="/assets/js/script.js"></script>
+    <!-- JSZip library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- markify -->
+    <script type="module" src="assets/js/script.js"></script>
   </body>
 </html>
