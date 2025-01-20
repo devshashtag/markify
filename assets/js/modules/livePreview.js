@@ -1,5 +1,5 @@
 class livePreview {
-  constructor(container, defaultImage = '/assets/images/placeholder.jpg', defaultWatermark = '/assets/images/watermark.png') {
+  constructor(container, defaultImage = '/assets/images/placeholder.webp', defaultWatermark = '/assets/images/watermark.webp') {
     this.container = container;
 
     // load image
