@@ -150,14 +150,30 @@ body {
   text-align: center;
   padding: 0.5rem;
   width: 100%;
+  font-size: 1.4rem;
+}
+@media (min-width: 576px) {
+  .settings-panel .settings-group__title {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 768px) {
+  .settings-panel .settings-group__title {
+    font-size: 2rem;
+  }
 }
 .settings-panel .settings-group__options {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem;
   width: 100%;
+}
+@media (min-width: 768px) {
+  .settings-panel .settings-group__options {
+    gap: 2rem;
+  }
 }
 .settings-panel .settings-preview {
   padding: 2rem 1rem;

@@ -23,16 +23,29 @@
       text-align: center;
       padding: 0.5rem;
       width: 100%;
+      font-size: 1.4rem;
+
+      @include breakpoint(sm) {
+        font-size: 1.6rem;
+      }
+
+      @include breakpoint(md) {
+        font-size: 2rem;
+      }
     }
 
     &__options {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1rem;
 
       padding: 1rem;
       width: 100%;
+
+      @include breakpoint(md) {
+        gap: 2rem;
+      }
     }
   }
 
